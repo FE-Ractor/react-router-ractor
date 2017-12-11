@@ -1,6 +1,6 @@
 {
   "name": "react-router-ractor",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "ractor router",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -12,7 +12,10 @@
   "devDependencies": {
     "@types/history": "^4.6.2"
   },
-  "scripts": {},
+  "scripts": {
+    "build": "rm -fr dist && tsc",
+    "prepare": "npm run build"
+  },
   "keywords": [
     "ractor",
     "router"
