@@ -1,0 +1,22 @@
+{
+  "name": "react-router-ractor",
+  "version": "1.0.0",
+  "description": "ractor router",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "dependencies": {},
+  "peerDependencies": {
+    "ractor": "^1.0.10",
+    "history": "^4.7.2"
+  },
+  "devDependencies": {
+    "@types/history": "^4.6.2"
+  },
+  "scripts": {},
+  "keywords": [
+    "ractor",
+    "router"
+  ],
+  "author": "corol",
+  "license": "ISC"
+}
