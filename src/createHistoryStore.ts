@@ -1,9 +1,10 @@
 import { Store } from "ractor"
-import { History } from "history"
+import { History, Location } from "history"
 import { Go, GoBack, GoForward, Push, Replace } from "./messages"
 
-export function createHistoryStore(history: History): new () => Store<{}> {
-  return class HistoryStore extends Store<{}> {
+export function createHistoryStore(history: History): new () => Store<HistoryStoreState> {
+  return class HistoryStore extends Store<HistoryStoreState> {
+    public state = { location: history.location, history }
     public createReceive() {
       return this.receiveBuilder()
         .match(Go, go => history.go(go.n))
@@ -14,4 +15,9 @@ export function createHistoryStore(history: History): new () => Store<{}> {
         .build()
     }
   }
+}
+
+export type HistoryStoreState = {
+  location: Location
+  history: History
 }
